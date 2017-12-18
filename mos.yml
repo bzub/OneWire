@@ -9,6 +9,7 @@ sources:
 includes:
   - include
 cdefs:
+  ARDUINO: 150
   ARDUINO_ARCH_ESP8266: 1
 
 libs:
