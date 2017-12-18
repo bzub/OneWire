@@ -1,4 +1,4 @@
-#include "platform.h"
+#include "OneWire.h"
 
 #ifdef ONEWIRE_FALLBACK_BASIC_FNs
 

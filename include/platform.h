@@ -96,6 +96,7 @@ using io_reg_t = uint32_t; // define special data type for register-access
 // resolve any problems related to ESP chips.  Please do not contact me and please
 // DO NOT CREATE GITHUB ISSUES for ESP support.  All ESP questions must be asked
 // on ESP community forums.
+#include "esp8266_peri.h"
 #define PIN_TO_BASEREG(pin)             ((volatile uint32_t*) GPO)
 #define PIN_TO_BITMASK(pin)             (1 << pin)
 #define DIRECT_READ(base, mask)         ((GPI & (mask)) ? 1 : 0)    //GPIO_IN_ADDRESS

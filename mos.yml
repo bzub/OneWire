@@ -1,0 +1,21 @@
+author: bzub
+description: Arduino OneWire library
+type: lib
+version: 0.0.1
+
+platforms: [ esp8266 ]
+sources:
+  - src
+includes:
+  - include
+cdefs:
+  ARDUINO_ARCH_ESP8266: 1
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/arduino-compat
+
+tags:
+  - arduino
+  - c
+
+manifest_version: 2017-09-29

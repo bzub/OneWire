@@ -89,6 +89,7 @@ sample code bearing this copyright.
 */
 
 #include "OneWire.h"
+#include "pgmspace.h"
 
 OneWire::OneWire(const uint8_t pin)
 {
@@ -135,6 +136,9 @@ bool OneWire::reset()
     interrupts();
     DELAY_MICROSECONDS(410);
 
+    // Fix for mongoose-os build
+    (void) _baseReg;
+
     // TODO: after presence detection we could power the hub if wanted
     return success;
 }
@@ -154,6 +158,9 @@ void OneWire::write_bit(const bool value, const bool power)
     DIRECT_WRITE_HIGH(_baseReg, _bitMask);    // drive output high
     interrupts();
     DELAY_MICROSECONDS(time_low);
+
+    // Fix for mongoose-os build
+    (void) _baseReg;
 }
 
 bool OneWire::read_bit()
@@ -171,6 +178,9 @@ bool OneWire::read_bit()
     interrupts();
     DELAY_MICROSECONDS(53);
     return value;
+
+    // Fix for mongoose-os build
+    (void) _baseReg;
 }
 
 void OneWire::write(uint8_t value, const bool power)
