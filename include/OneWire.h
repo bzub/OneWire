@@ -1,6 +1,15 @@
 #ifndef OneWire_h
 #define OneWire_h
 
+#ifdef __cplusplus
+#else
+typedef struct OneWireTag OneWire;
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // Select the table-lookup method of computing the 8-bit CRC
 // by setting this to 1.  The lookup table enlarges code size by
 // about 250 bytes.  It does NOT consume RAM (but did in very
@@ -199,5 +208,9 @@ public:
     static uint16_t crc16(const uint8_t data_array[], uint16_t data_size, uint16_t crc_init = 0);
 
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
